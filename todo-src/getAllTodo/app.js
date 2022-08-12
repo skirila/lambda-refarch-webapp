@@ -55,6 +55,7 @@ function getRecords(username) {
 
 // Lambda Handler
 exports.getAllToDoItem = metricScope((metrics) => async (event, context) => {
+  console.log(event)
   metrics.setNamespace("TodoApp");
   metrics.putDimensions({ Service: "getAllTodo" });
   metrics.setProperty("RequestId", context.requestId);

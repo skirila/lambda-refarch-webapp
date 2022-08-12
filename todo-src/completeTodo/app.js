@@ -61,6 +61,7 @@ function updateRecord(username, recordId) {
 
 // Lambda Handler
 exports.completeToDoItem = metricScope((metrics) => async (event, context) => {
+  console.log(event)
   metrics.setNamespace("TodoApp");
   metrics.putDimensions({ Service: "completeTodo" });
   metrics.setProperty("RequestId", context.requestId);
